@@ -10,6 +10,7 @@ import UIKit
 
 class OffersViewController: UIViewController {
     private let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+    private let offersLoader = OffersLoader()
     
     override func loadView() {
         view = UIView(frame: .zero)
@@ -33,6 +34,15 @@ class OffersViewController: UIViewController {
         super.viewDidLoad()
         
         collectionView.backgroundColor = UIColor.blue
+        
+        let result = offersLoader.load()
+        
+        switch result {
+        case .success:
+            print("success")
+        case .error:
+            print("error")
+        }
 
         // Do any additional setup after loading the view.
     }

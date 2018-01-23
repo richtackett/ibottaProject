@@ -14,6 +14,8 @@
 		508B05AD20178D0C0023EA6B /* OffersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508B05AC20178D0C0023EA6B /* OffersViewController.swift */; };
 		508B05AF20178D1D0023EA6B /* OfferViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508B05AE20178D1D0023EA6B /* OfferViewController.swift */; };
 		508B05B120178E1C0023EA6B /* Offers.json in Resources */ = {isa = PBXBuildFile; fileRef = 508B05B020178E1C0023EA6B /* Offers.json */; };
+		508B05B32017E3080023EA6B /* OffersLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508B05B22017E3080023EA6B /* OffersLoader.swift */; };
+		508B05B52017ED920023EA6B /* Offer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508B05B42017ED920023EA6B /* Offer.swift */; };
 		51A362BA267223FB5B36C2D3 /* Pods_iBottaProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C887C440016CA92C642D800 /* Pods_iBottaProjectTests.framework */; };
 		D2BF79DC43273899D6A6F694 /* Pods_iBottaProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 079FD19E0EA2AF537D4F0775 /* Pods_iBottaProject.framework */; };
 /* End PBXBuildFile section */
@@ -43,6 +45,8 @@
 		508B05AC20178D0C0023EA6B /* OffersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffersViewController.swift; sourceTree = "<group>"; };
 		508B05AE20178D1D0023EA6B /* OfferViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferViewController.swift; sourceTree = "<group>"; };
 		508B05B020178E1C0023EA6B /* Offers.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Offers.json; sourceTree = "<group>"; };
+		508B05B22017E3080023EA6B /* OffersLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffersLoader.swift; sourceTree = "<group>"; };
+		508B05B42017ED920023EA6B /* Offer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Offer.swift; sourceTree = "<group>"; };
 		8C887C440016CA92C642D800 /* Pods_iBottaProjectTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iBottaProjectTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A196FFBD7F65473E23837CFA /* Pods-iBottaProjectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iBottaProjectTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iBottaProjectTests/Pods-iBottaProjectTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D5C018CCBE2DB88092E60113 /* Pods-iBottaProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iBottaProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-iBottaProject/Pods-iBottaProject.release.xcconfig"; sourceTree = "<group>"; };
@@ -98,6 +102,8 @@
 				5025B14C201788F9001A41BF /* Info.plist */,
 				508B05AC20178D0C0023EA6B /* OffersViewController.swift */,
 				508B05AE20178D1D0023EA6B /* OfferViewController.swift */,
+				508B05B22017E3080023EA6B /* OffersLoader.swift */,
+				508B05B42017ED920023EA6B /* Offer.swift */,
 			);
 			path = iBottaProject;
 			sourceTree = "<group>";
@@ -343,8 +349,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5025B141201788F9001A41BF /* AppDelegate.swift in Sources */,
+				508B05B32017E3080023EA6B /* OffersLoader.swift in Sources */,
 				508B05AF20178D1D0023EA6B /* OfferViewController.swift in Sources */,
 				508B05AD20178D0C0023EA6B /* OffersViewController.swift in Sources */,
+				508B05B52017ED920023EA6B /* Offer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
