@@ -13,6 +13,7 @@
 		5025B156201788F9001A41BF /* iBottaProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5025B155201788F9001A41BF /* iBottaProjectTests.swift */; };
 		508B05AD20178D0C0023EA6B /* OffersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508B05AC20178D0C0023EA6B /* OffersViewController.swift */; };
 		508B05AF20178D1D0023EA6B /* OfferViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508B05AE20178D1D0023EA6B /* OfferViewController.swift */; };
+		508B05B120178E1C0023EA6B /* Offers.json in Resources */ = {isa = PBXBuildFile; fileRef = 508B05B020178E1C0023EA6B /* Offers.json */; };
 		51A362BA267223FB5B36C2D3 /* Pods_iBottaProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C887C440016CA92C642D800 /* Pods_iBottaProjectTests.framework */; };
 		D2BF79DC43273899D6A6F694 /* Pods_iBottaProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 079FD19E0EA2AF537D4F0775 /* Pods_iBottaProject.framework */; };
 /* End PBXBuildFile section */
@@ -41,6 +42,7 @@
 		5025B157201788F9001A41BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		508B05AC20178D0C0023EA6B /* OffersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffersViewController.swift; sourceTree = "<group>"; };
 		508B05AE20178D1D0023EA6B /* OfferViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferViewController.swift; sourceTree = "<group>"; };
+		508B05B020178E1C0023EA6B /* Offers.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Offers.json; sourceTree = "<group>"; };
 		8C887C440016CA92C642D800 /* Pods_iBottaProjectTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iBottaProjectTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A196FFBD7F65473E23837CFA /* Pods-iBottaProjectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iBottaProjectTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iBottaProjectTests/Pods-iBottaProjectTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D5C018CCBE2DB88092E60113 /* Pods-iBottaProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iBottaProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-iBottaProject/Pods-iBottaProject.release.xcconfig"; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 		5025B13F201788F9001A41BF /* iBottaProject */ = {
 			isa = PBXGroup;
 			children = (
+				508B05B020178E1C0023EA6B /* Offers.json */,
 				5025B140201788F9001A41BF /* AppDelegate.swift */,
 				5025B147201788F9001A41BF /* Assets.xcassets */,
 				5025B149201788F9001A41BF /* LaunchScreen.storyboard */,
@@ -217,6 +220,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				508B05B120178E1C0023EA6B /* Offers.json in Resources */,
 				5025B14B201788F9001A41BF /* LaunchScreen.storyboard in Resources */,
 				5025B148201788F9001A41BF /* Assets.xcassets in Resources */,
 			);
