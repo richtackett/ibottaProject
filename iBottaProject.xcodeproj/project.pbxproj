@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		5025B141201788F9001A41BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5025B140201788F9001A41BF /* AppDelegate.swift */; };
-		5025B143201788F9001A41BF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5025B142201788F9001A41BF /* ViewController.swift */; };
-		5025B146201788F9001A41BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5025B144201788F9001A41BF /* Main.storyboard */; };
 		5025B148201788F9001A41BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5025B147201788F9001A41BF /* Assets.xcassets */; };
 		5025B14B201788F9001A41BF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5025B149201788F9001A41BF /* LaunchScreen.storyboard */; };
 		5025B156201788F9001A41BF /* iBottaProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5025B155201788F9001A41BF /* iBottaProjectTests.swift */; };
+		508B05AD20178D0C0023EA6B /* OffersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508B05AC20178D0C0023EA6B /* OffersViewController.swift */; };
+		508B05AF20178D1D0023EA6B /* OfferViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508B05AE20178D1D0023EA6B /* OfferViewController.swift */; };
 		51A362BA267223FB5B36C2D3 /* Pods_iBottaProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C887C440016CA92C642D800 /* Pods_iBottaProjectTests.framework */; };
 		D2BF79DC43273899D6A6F694 /* Pods_iBottaProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 079FD19E0EA2AF537D4F0775 /* Pods_iBottaProject.framework */; };
 /* End PBXBuildFile section */
@@ -33,14 +33,14 @@
 		36FAE91A18C305532BF00F0E /* Pods-iBottaProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iBottaProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iBottaProject/Pods-iBottaProject.debug.xcconfig"; sourceTree = "<group>"; };
 		5025B13D201788F9001A41BF /* iBottaProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iBottaProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5025B140201788F9001A41BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5025B142201788F9001A41BF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		5025B145201788F9001A41BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5025B147201788F9001A41BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5025B14A201788F9001A41BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5025B14C201788F9001A41BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5025B151201788F9001A41BF /* iBottaProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iBottaProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5025B155201788F9001A41BF /* iBottaProjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iBottaProjectTests.swift; sourceTree = "<group>"; };
 		5025B157201788F9001A41BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		508B05AC20178D0C0023EA6B /* OffersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffersViewController.swift; sourceTree = "<group>"; };
+		508B05AE20178D1D0023EA6B /* OfferViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferViewController.swift; sourceTree = "<group>"; };
 		8C887C440016CA92C642D800 /* Pods_iBottaProjectTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iBottaProjectTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A196FFBD7F65473E23837CFA /* Pods-iBottaProjectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iBottaProjectTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iBottaProjectTests/Pods-iBottaProjectTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D5C018CCBE2DB88092E60113 /* Pods-iBottaProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iBottaProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-iBottaProject/Pods-iBottaProject.release.xcconfig"; sourceTree = "<group>"; };
@@ -90,11 +90,11 @@
 			isa = PBXGroup;
 			children = (
 				5025B140201788F9001A41BF /* AppDelegate.swift */,
-				5025B142201788F9001A41BF /* ViewController.swift */,
-				5025B144201788F9001A41BF /* Main.storyboard */,
 				5025B147201788F9001A41BF /* Assets.xcassets */,
 				5025B149201788F9001A41BF /* LaunchScreen.storyboard */,
 				5025B14C201788F9001A41BF /* Info.plist */,
+				508B05AC20178D0C0023EA6B /* OffersViewController.swift */,
+				508B05AE20178D1D0023EA6B /* OfferViewController.swift */,
 			);
 			path = iBottaProject;
 			sourceTree = "<group>";
@@ -219,7 +219,6 @@
 			files = (
 				5025B14B201788F9001A41BF /* LaunchScreen.storyboard in Resources */,
 				5025B148201788F9001A41BF /* Assets.xcassets in Resources */,
-				5025B146201788F9001A41BF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,8 +338,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5025B143201788F9001A41BF /* ViewController.swift in Sources */,
 				5025B141201788F9001A41BF /* AppDelegate.swift in Sources */,
+				508B05AF20178D1D0023EA6B /* OfferViewController.swift in Sources */,
+				508B05AD20178D0C0023EA6B /* OffersViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,14 +363,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		5025B144201788F9001A41BF /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5025B145201788F9001A41BF /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		5025B149201788F9001A41BF /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -501,7 +493,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = edu.self.iBottaProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -517,7 +509,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = edu.self.iBottaProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
