@@ -17,6 +17,7 @@
 		508B05B32017E3080023EA6B /* OffersLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508B05B22017E3080023EA6B /* OffersLoader.swift */; };
 		508B05B52017ED920023EA6B /* Offer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508B05B42017ED920023EA6B /* Offer.swift */; };
 		508B05B72017EE850023EA6B /* OfferCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508B05B62017EE850023EA6B /* OfferCollectionViewCell.swift */; };
+		508B05DF2018DEFF0023EA6B /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508B05DE2018DEFF0023EA6B /* Style.swift */; };
 		51A362BA267223FB5B36C2D3 /* Pods_iBottaProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C887C440016CA92C642D800 /* Pods_iBottaProjectTests.framework */; };
 		D2BF79DC43273899D6A6F694 /* Pods_iBottaProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 079FD19E0EA2AF537D4F0775 /* Pods_iBottaProject.framework */; };
 /* End PBXBuildFile section */
@@ -49,6 +50,7 @@
 		508B05B22017E3080023EA6B /* OffersLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffersLoader.swift; sourceTree = "<group>"; };
 		508B05B42017ED920023EA6B /* Offer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Offer.swift; sourceTree = "<group>"; };
 		508B05B62017EE850023EA6B /* OfferCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferCollectionViewCell.swift; sourceTree = "<group>"; };
+		508B05DE2018DEFF0023EA6B /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
 		8C887C440016CA92C642D800 /* Pods_iBottaProjectTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iBottaProjectTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A196FFBD7F65473E23837CFA /* Pods-iBottaProjectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iBottaProjectTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iBottaProjectTests/Pods-iBottaProjectTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D5C018CCBE2DB88092E60113 /* Pods-iBottaProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iBottaProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-iBottaProject/Pods-iBottaProject.release.xcconfig"; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				508B05B22017E3080023EA6B /* OffersLoader.swift */,
 				508B05AC20178D0C0023EA6B /* OffersViewController.swift */,
 				508B05AE20178D1D0023EA6B /* OfferViewController.swift */,
+				508B05DE2018DEFF0023EA6B /* Style.swift */,
 			);
 			path = iBottaProject;
 			sourceTree = "<group>";
@@ -356,6 +359,7 @@
 				508B05B32017E3080023EA6B /* OffersLoader.swift in Sources */,
 				508B05AF20178D1D0023EA6B /* OfferViewController.swift in Sources */,
 				508B05AD20178D0C0023EA6B /* OffersViewController.swift in Sources */,
+				508B05DF2018DEFF0023EA6B /* Style.swift in Sources */,
 				508B05B52017ED920023EA6B /* Offer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

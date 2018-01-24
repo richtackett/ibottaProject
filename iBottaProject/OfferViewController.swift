@@ -16,6 +16,7 @@ final class OfferViewController: UIViewController {
     private let amountLabel = UILabel(frame: .zero)
     private let nameLabel = UILabel(frame: .zero)
     private let descriptionLabel = UILabel(frame: .zero)
+    private let style = Style()
     
     init(offer: Offer) {
         self.offer = offer
@@ -32,6 +33,7 @@ final class OfferViewController: UIViewController {
         
         let safeArea = view.safeAreaLayoutGuide
         
+        backgroundView.layer.cornerRadius = style.cornerRadius
         backgroundView.backgroundColor = UIColor.lightGray
         view.addSubview(backgroundView)
         backgroundView.translatesAutoresizingMaskIntoConstraints = false
@@ -49,6 +51,8 @@ final class OfferViewController: UIViewController {
         backgroundView.bottomAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 6.0).isActive = true
         
         amountLabel.numberOfLines = 0
+        amountLabel.font = style.amountFont
+        amountLabel.textColor = style.textColor
         view.addSubview(amountLabel)
         amountLabel.translatesAutoresizingMaskIntoConstraints = false
         amountLabel.topAnchor.constraint(equalTo: backgroundView.bottomAnchor, constant: 8.0).isActive = true
@@ -56,6 +60,8 @@ final class OfferViewController: UIViewController {
         safeArea.trailingAnchor.constraint(equalTo: amountLabel.trailingAnchor, constant: 12.0).isActive = true
         
         nameLabel.numberOfLines = 0
+        nameLabel.font = style.nameFont
+        nameLabel.textColor = style.textColor
         view.addSubview(nameLabel)
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         nameLabel.topAnchor.constraint(equalTo: amountLabel.bottomAnchor, constant: 3.0).isActive = true
@@ -63,6 +69,8 @@ final class OfferViewController: UIViewController {
         safeArea.trailingAnchor.constraint(equalTo: nameLabel.trailingAnchor, constant: 12.0).isActive = true
         
         descriptionLabel.numberOfLines = 0
+        descriptionLabel.font = style.descriptionFont
+        descriptionLabel.textColor = style.textColor
         view.addSubview(descriptionLabel)
         descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
         descriptionLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 3.0).isActive = true
