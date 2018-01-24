@@ -11,6 +11,7 @@ import UIKit
 final class OffersViewController: UIViewController {
     private let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
     private let cellIdentifier = "OfferCell"
+    private var offers = [Offer]()
     private let spacing: CGFloat = 8.0
     private let offersLoader = OffersLoader()
     
@@ -35,10 +36,10 @@ final class OffersViewController: UIViewController {
         _setupCollectionView()
         
         let result = offersLoader.load()
-        
         switch result {
-        case .success:
-            print("success")
+        case .success(let offers):
+            self.offers = offers
+            collectionView.reloadData()
         case .error:
             print("error")
         }
@@ -57,14 +58,14 @@ extension OffersViewController: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath)
         
         if let offerCell = cell as? OfferCollectionViewCell {
-//            offerCell.populate(photos[indexPath.row])
+            offerCell.populate(offers[indexPath.row])
         }
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return offers.count
     }
 }
 
