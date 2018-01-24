@@ -8,7 +8,7 @@
 
 import UIKit
 
-class OfferViewController: UIViewController {
+final class OfferViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
