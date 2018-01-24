@@ -97,16 +97,16 @@
 		5025B13F201788F9001A41BF /* iBottaProject */ = {
 			isa = PBXGroup;
 			children = (
-				508B05B020178E1C0023EA6B /* Offers.json */,
 				5025B140201788F9001A41BF /* AppDelegate.swift */,
 				5025B147201788F9001A41BF /* Assets.xcassets */,
-				5025B149201788F9001A41BF /* LaunchScreen.storyboard */,
 				5025B14C201788F9001A41BF /* Info.plist */,
-				508B05AC20178D0C0023EA6B /* OffersViewController.swift */,
-				508B05AE20178D1D0023EA6B /* OfferViewController.swift */,
-				508B05B22017E3080023EA6B /* OffersLoader.swift */,
+				5025B149201788F9001A41BF /* LaunchScreen.storyboard */,
 				508B05B42017ED920023EA6B /* Offer.swift */,
 				508B05B62017EE850023EA6B /* OfferCollectionViewCell.swift */,
+				508B05B020178E1C0023EA6B /* Offers.json */,
+				508B05B22017E3080023EA6B /* OffersLoader.swift */,
+				508B05AC20178D0C0023EA6B /* OffersViewController.swift */,
+				508B05AE20178D1D0023EA6B /* OfferViewController.swift */,
 			);
 			path = iBottaProject;
 			sourceTree = "<group>";

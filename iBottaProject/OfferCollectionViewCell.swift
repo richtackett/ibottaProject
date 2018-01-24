@@ -44,7 +44,6 @@ private extension OfferCollectionViewCell {
     func _setupCell() {
         contentView.backgroundColor = UIColor.white
         contentView.translatesAutoresizingMaskIntoConstraints = false
-        
         contentView.widthAnchor.constraint(equalToConstant: 170.0).isActive = true //NEED TO CACLUATE
         
         backgroundCellView.backgroundColor = UIColor.lightGray

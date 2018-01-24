@@ -25,9 +25,9 @@ final class OffersViewController: UIViewController {
         let margins = view.layoutMarginsGuide
         collectionView.leadingAnchor.constraint(equalTo: margins.leadingAnchor).isActive = true
         collectionView.trailingAnchor.constraint(equalTo: margins.trailingAnchor).isActive = true
-        let guide = view.safeAreaLayoutGuide
-        collectionView.topAnchor.constraint(equalTo: guide.topAnchor).isActive = true
-        collectionView.bottomAnchor.constraint(equalTo: guide.bottomAnchor).isActive = true
+        let safeArea = view.safeAreaLayoutGuide
+        collectionView.topAnchor.constraint(equalTo: safeArea.topAnchor).isActive = true
+        collectionView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor).isActive = true
     }
 
     override func viewDidLoad() {
@@ -72,9 +72,9 @@ extension OffersViewController: UICollectionViewDataSource {
 // MARK: - UICollectionViewDelegate
 extension OffersViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        let photoViewController = PhotoViewController()
-//        photoViewController.photo = photos[indexPath.row]
-//        navigationController?.pushViewController(photoViewController, animated: true)
+        let offerViewController = OfferViewController(offer: offers[indexPath.row])
+
+        navigationController?.pushViewController(offerViewController, animated: true)
     }
 }
 
