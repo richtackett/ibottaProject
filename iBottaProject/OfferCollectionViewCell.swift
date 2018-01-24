@@ -39,7 +39,7 @@ final class OfferCollectionViewCell: UICollectionViewCell {
     }
 }
 
-//TODO: SET FONTS AND COLORS, ROUND CORNERS, CALCULATE PROPER SPACING, ADD FAVORITES BUTTON, ADD LOADING SPINNER
+//TODO: CALCULATE PROPER SPACING, ADD FAVORITES BUTTON
 
 private extension OfferCollectionViewCell {
     func _setupCell() {
@@ -48,7 +48,7 @@ private extension OfferCollectionViewCell {
         contentView.widthAnchor.constraint(equalToConstant: 170.0).isActive = true //NEED TO CACLUATE
         
         backgroundCellView.layer.cornerRadius = style.cornerRadius
-        backgroundCellView.backgroundColor = UIColor.lightGray
+        backgroundCellView.backgroundColor = style.backgroundColor
         contentView.addSubview(backgroundCellView)
         backgroundCellView.translatesAutoresizingMaskIntoConstraints = false
         backgroundCellView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 24.0).isActive = true

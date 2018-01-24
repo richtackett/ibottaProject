@@ -34,7 +34,7 @@ final class OfferViewController: UIViewController {
         let safeArea = view.safeAreaLayoutGuide
         
         backgroundView.layer.cornerRadius = style.cornerRadius
-        backgroundView.backgroundColor = UIColor.lightGray
+        backgroundView.backgroundColor = style.backgroundColor
         view.addSubview(backgroundView)
         backgroundView.translatesAutoresizingMaskIntoConstraints = false
         backgroundView.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: 24.0).isActive = true

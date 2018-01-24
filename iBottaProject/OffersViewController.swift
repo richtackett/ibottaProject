@@ -22,12 +22,11 @@ final class OffersViewController: UIViewController {
         
         view.addSubview(collectionView)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        let margins = view.layoutMarginsGuide
-        collectionView.leadingAnchor.constraint(equalTo: margins.leadingAnchor).isActive = true
-        collectionView.trailingAnchor.constraint(equalTo: margins.trailingAnchor).isActive = true
         let safeArea = view.safeAreaLayoutGuide
+        collectionView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor).isActive = true
+        safeArea.trailingAnchor.constraint(equalTo: collectionView.trailingAnchor).isActive = true
         collectionView.topAnchor.constraint(equalTo: safeArea.topAnchor).isActive = true
-        collectionView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor).isActive = true
+        safeArea.bottomAnchor.constraint(equalTo: collectionView.bottomAnchor).isActive = true
     }
 
     override func viewDidLoad() {
