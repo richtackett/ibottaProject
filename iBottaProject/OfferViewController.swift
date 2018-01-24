@@ -13,6 +13,7 @@ final class OfferViewController: UIViewController {
     private var offer: Offer
     private let backgroundView = UIView(frame: .zero)
     private let imageView = UIImageView(frame: .zero)
+    private let favoriteButton = UIButton(frame: .zero)
     private let amountLabel = UILabel(frame: .zero)
     private let nameLabel = UILabel(frame: .zero)
     private let descriptionLabel = UILabel(frame: .zero)
@@ -50,6 +51,17 @@ final class OfferViewController: UIViewController {
         backgroundView.trailingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 6.0).isActive = true
         backgroundView.bottomAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 6.0).isActive = true
         
+        favoriteButton.setImage(UIImage(named: "heart"), for: .normal)
+        favoriteButton.backgroundColor = UIColor.white.withAlphaComponent(0.60)
+        favoriteButton.layer.cornerRadius = style.cornerRadius
+        favoriteButton.translatesAutoresizingMaskIntoConstraints = false
+        favoriteButton.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
+        backgroundView.addSubview(favoriteButton)
+        favoriteButton.topAnchor.constraint(equalTo: backgroundView.topAnchor, constant: 6.0).isActive = true
+        backgroundView.trailingAnchor.constraint(equalTo: favoriteButton.trailingAnchor, constant: 6.0).isActive = true
+        favoriteButton.heightAnchor.constraint(equalToConstant: 40.0).isActive = true
+        favoriteButton.widthAnchor.constraint(equalToConstant: 40.0).isActive = true
+        
         amountLabel.numberOfLines = 0
         amountLabel.font = style.amountFont
         amountLabel.textColor = style.textColor
@@ -82,6 +94,12 @@ final class OfferViewController: UIViewController {
         super.viewDidLoad()
         navigationItem.title = "Offer Detail"
         _populate()
+    }
+    
+    @objc func buttonTapped(_ sender : UIButton) {
+        
+        
+        print("button tapped")
     }
 }
 

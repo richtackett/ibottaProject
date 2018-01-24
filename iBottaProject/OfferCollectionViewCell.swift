@@ -12,9 +12,16 @@ import Kingfisher
 final class OfferCollectionViewCell: UICollectionViewCell {
     private let backgroundCellView = UIView(frame: .zero)
     private let imageView = UIImageView(frame: .zero)
+    private let favoriteButton = UIButton(frame: .zero)
     private let amountLabel = UILabel(frame: .zero)
     private let nameLabel = UILabel(frame: .zero)
     private let style = Style()
+    private var contentViewWidthConstraint: NSLayoutConstraint!
+    
+    private var contentViewWidth: CGFloat {
+        let screenWidth = UIScreen.main.bounds.size.width
+        return (screenWidth / 2) - (12 + 4)
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -36,18 +43,22 @@ final class OfferCollectionViewCell: UICollectionViewCell {
         imageView.kf.setImage(with: offer.url)
         amountLabel.text = offer.currentValue
         nameLabel.text = offer.name
+        contentViewWidthConstraint.constant = contentViewWidth
+    }
+    
+    @objc func buttonTapped(_ sender : UIButton) {
+
+        
+        print("button tapped")
     }
 }
-
-//TODO: CALCULATE PROPER SPACING, ADD FAVORITES BUTTON
 
 private extension OfferCollectionViewCell {
     func _setupCell() {
         contentView.backgroundColor = UIColor.white
         contentView.translatesAutoresizingMaskIntoConstraints = false
-        let screenWidth = UIScreen.main.bounds.size.width
-        let contentViewWidth = (screenWidth / 2) - (12 + 4)
-        contentView.widthAnchor.constraint(equalToConstant: contentViewWidth).isActive = true
+        contentViewWidthConstraint = contentView.widthAnchor.constraint(equalToConstant: contentViewWidth)
+        contentViewWidthConstraint.isActive = true
         
         backgroundCellView.layer.cornerRadius = style.cornerRadius
         backgroundCellView.backgroundColor = style.backgroundColor
@@ -65,6 +76,17 @@ private extension OfferCollectionViewCell {
         imageView.leadingAnchor.constraint(equalTo: backgroundCellView.leadingAnchor, constant: 6.0).isActive = true
         backgroundCellView.trailingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 6.0).isActive = true
         backgroundCellView.bottomAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 6.0).isActive = true
+        
+        favoriteButton.setImage(UIImage(named: "heart"), for: .normal)
+        favoriteButton.backgroundColor = UIColor.white.withAlphaComponent(0.60)
+        favoriteButton.layer.cornerRadius = style.cornerRadius
+        favoriteButton.translatesAutoresizingMaskIntoConstraints = false
+        favoriteButton.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
+        contentView.addSubview(favoriteButton)
+        favoriteButton.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 6.0).isActive = true
+        contentView.trailingAnchor.constraint(equalTo: favoriteButton.trailingAnchor, constant: 6.0).isActive = true
+        favoriteButton.heightAnchor.constraint(equalToConstant: 40.0).isActive = true
+        favoriteButton.widthAnchor.constraint(equalToConstant: 40.0).isActive = true
         
         amountLabel.font = style.amountFont
         amountLabel.textColor = style.textColor
