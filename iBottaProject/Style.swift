@@ -15,4 +15,7 @@ struct Style {
     let descriptionFont = UIFont(name: "AvenirNext-Regular", size: 11.0)
     let textColor = UIColor(red: 74.0/255.0, green: 74.0/255.0, blue: 74.0/255.0, alpha: 1.0)
     let backgroundColor = UIColor(red: 243.0/255.0, green: 245.0/255.0, blue: 246.0/255.0, alpha: 1.0)
+    let top: CGFloat = 24.0
+    let inset: CGFloat = 12.0
+    let spacing: CGFloat = 8.0
 }

@@ -20,7 +20,7 @@ final class OfferCollectionViewCell: UICollectionViewCell {
     
     private var contentViewWidth: CGFloat {
         let screenWidth = UIScreen.main.bounds.size.width
-        return (screenWidth / 2) - (12 + 4)
+        return (screenWidth / 2) - (style.inset + style.spacing / 2)
     }
     
     override init(frame: CGRect) {

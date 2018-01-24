@@ -12,8 +12,8 @@ final class OffersViewController: UIViewController {
     private let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
     private let cellIdentifier = "OfferCell"
     private var offers = [Offer]()
-    private let spacing: CGFloat = 8.0
     private let offersLoader = OffersLoader()
+    private let style = Style()
     
     override func loadView() {
         view = UIView(frame: .zero)
@@ -34,6 +34,7 @@ final class OffersViewController: UIViewController {
         navigationItem.title = "Offers"
         _setupCollectionView()
         
+        //TODO: LOAD IN BACKGROUND THREAD AND MAKE ASYNC
         let result = offersLoader.load()
         switch result {
         case .success(let offers):
@@ -72,7 +73,6 @@ extension OffersViewController: UICollectionViewDataSource {
 extension OffersViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let offerViewController = OfferViewController(offer: offers[indexPath.row])
-
         navigationController?.pushViewController(offerViewController, animated: true)
     }
 }
@@ -85,8 +85,8 @@ private extension OffersViewController {
         collectionView.register(OfferCollectionViewCell.self, forCellWithReuseIdentifier: cellIdentifier)
         collectionView.backgroundColor = UIColor.white
         if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-            flowLayout.sectionInset = UIEdgeInsets(top: 24.0, left: 12.0, bottom: 0.0, right: 12.0)
-            flowLayout.minimumInteritemSpacing = spacing
+            flowLayout.sectionInset = UIEdgeInsets(top: style.top, left: style.inset, bottom: 0.0, right: style.inset)
+            flowLayout.minimumInteritemSpacing = style.spacing
             flowLayout.minimumLineSpacing = 0.0
             flowLayout.estimatedItemSize = CGSize(width: 1.0, height: 1.0)
         }
