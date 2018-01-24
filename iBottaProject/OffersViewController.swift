@@ -44,11 +44,6 @@ final class OffersViewController: UIViewController {
         }
 
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
 }
 
 // MARK: - UICollectionViewDataSource
@@ -83,11 +78,11 @@ private extension OffersViewController {
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.register(OfferCollectionViewCell.self, forCellWithReuseIdentifier: cellIdentifier)
-        collectionView.backgroundColor = UIColor.blue
+        collectionView.backgroundColor = UIColor.white
         if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-            flowLayout.sectionInset = UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing)
+            flowLayout.sectionInset = UIEdgeInsets(top: 24.0, left: 12.0, bottom: 0.0, right: 12.0)
             flowLayout.minimumInteritemSpacing = spacing
-            flowLayout.minimumLineSpacing = spacing
+            flowLayout.minimumLineSpacing = 0.0
             flowLayout.estimatedItemSize = CGSize(width: 1.0, height: 1.0)
         }
     }

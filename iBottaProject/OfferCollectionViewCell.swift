@@ -45,15 +45,17 @@ private extension OfferCollectionViewCell {
     func _setupCell() {
         contentView.backgroundColor = UIColor.white
         contentView.translatesAutoresizingMaskIntoConstraints = false
-        contentView.widthAnchor.constraint(equalToConstant: 170.0).isActive = true //NEED TO CACLUATE
+        let screenWidth = UIScreen.main.bounds.size.width
+        let contentViewWidth = (screenWidth / 2) - (12 + 4)
+        contentView.widthAnchor.constraint(equalToConstant: contentViewWidth).isActive = true
         
         backgroundCellView.layer.cornerRadius = style.cornerRadius
         backgroundCellView.backgroundColor = style.backgroundColor
         contentView.addSubview(backgroundCellView)
         backgroundCellView.translatesAutoresizingMaskIntoConstraints = false
-        backgroundCellView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 24.0).isActive = true
-        backgroundCellView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 12.0).isActive = true
-        contentView.trailingAnchor.constraint(equalTo: backgroundCellView.trailingAnchor, constant: 12.0).isActive = true
+        backgroundCellView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 0.0).isActive = true
+        backgroundCellView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 0.0).isActive = true
+        contentView.trailingAnchor.constraint(equalTo: backgroundCellView.trailingAnchor, constant: 0.0).isActive = true
         backgroundCellView.heightAnchor.constraint(equalTo: backgroundCellView.widthAnchor, multiplier: 1.0/1.5).isActive = true
         
         imageView.contentMode = .scaleAspectFit
@@ -69,16 +71,16 @@ private extension OfferCollectionViewCell {
         contentView.addSubview(amountLabel)
         amountLabel.translatesAutoresizingMaskIntoConstraints = false
         amountLabel.topAnchor.constraint(equalTo: backgroundCellView.bottomAnchor, constant: 8.0).isActive = true
-        amountLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 12.0).isActive = true
-        contentView.trailingAnchor.constraint(equalTo: amountLabel.trailingAnchor, constant: 12.0).isActive = true
+        amountLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 0.0).isActive = true
+        contentView.trailingAnchor.constraint(equalTo: amountLabel.trailingAnchor, constant: 0.0).isActive = true
         
         nameLabel.font = style.nameFont
         nameLabel.textColor = style.textColor
         contentView.addSubview(nameLabel)
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         nameLabel.topAnchor.constraint(equalTo: amountLabel.bottomAnchor, constant: 3.0).isActive = true
-        nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 12.0).isActive = true
-        contentView.trailingAnchor.constraint(equalTo: nameLabel.trailingAnchor, constant: 12.0).isActive = true
+        nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 0.0).isActive = true
+        contentView.trailingAnchor.constraint(equalTo: nameLabel.trailingAnchor, constant: 0.0).isActive = true
         contentView.bottomAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 24.0).isActive = true
     }
 }
