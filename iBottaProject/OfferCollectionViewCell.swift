@@ -17,6 +17,8 @@ final class OfferCollectionViewCell: UICollectionViewCell {
     private let nameLabel = UILabel(frame: .zero)
     private let style = Style()
     private var contentViewWidthConstraint: NSLayoutConstraint!
+    private let favoritesStore = OfferFavoritesStore()
+    private var offer: Offer?
     
     private var contentViewWidth: CGFloat {
         let screenWidth = UIScreen.main.bounds.size.width
@@ -40,16 +42,22 @@ final class OfferCollectionViewCell: UICollectionViewCell {
     }
     
     func populate(_ offer: Offer) {
+        self.offer = offer
+        self.offer?.isFavorite = favoritesStore.isFavorite(offerID: offer.id)
         imageView.kf.setImage(with: offer.url)
         amountLabel.text = offer.currentValue
         nameLabel.text = offer.name
         contentViewWidthConstraint.constant = contentViewWidth
+        _setFavoriteDisplay(isFavorite: self.offer?.isFavorite ?? false)
     }
     
     @objc func buttonTapped(_ sender : UIButton) {
-
+        guard var offer = offer else { return }
         
-        print("button tapped")
+        offer.isFavorite = !offer.isFavorite
+        self.offer = offer
+        _setFavoriteDisplay(isFavorite: offer.isFavorite)
+        favoritesStore.toggleSavingAsFavorite(offerID: offer.id)
     }
 }
 
@@ -104,5 +112,13 @@ private extension OfferCollectionViewCell {
         nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 0.0).isActive = true
         contentView.trailingAnchor.constraint(equalTo: nameLabel.trailingAnchor, constant: 0.0).isActive = true
         contentView.bottomAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 24.0).isActive = true
+    }
+    
+    func _setFavoriteDisplay(isFavorite: Bool) {
+        if isFavorite {
+            favoriteButton.setImage(UIImage(named: "solidHeart"), for: .normal)
+        } else {
+            favoriteButton.setImage(UIImage(named: "heart"), for: .normal)
+        }
     }
 }

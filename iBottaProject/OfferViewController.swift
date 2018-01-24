@@ -18,6 +18,7 @@ final class OfferViewController: UIViewController {
     private let nameLabel = UILabel(frame: .zero)
     private let descriptionLabel = UILabel(frame: .zero)
     private let style = Style()
+    private let favoritesStore = OfferFavoritesStore()
     
     init(offer: Offer) {
         self.offer = offer
@@ -97,18 +98,28 @@ final class OfferViewController: UIViewController {
     }
     
     @objc func buttonTapped(_ sender : UIButton) {
-        
-        
-        print("button tapped")
+        offer.isFavorite = !offer.isFavorite
+        _setFavoriteDisplay(isFavorite: offer.isFavorite)
+        favoritesStore.toggleSavingAsFavorite(offerID: offer.id)
     }
 }
 
 // MARK: - Private Helper Methods
 private extension OfferViewController {
     func _populate() {
+        offer.isFavorite = favoritesStore.isFavorite(offerID: offer.id)
+        _setFavoriteDisplay(isFavorite: offer.isFavorite)
         imageView.kf.setImage(with: offer.url)
         amountLabel.text = offer.currentValue
         nameLabel.text = offer.name
         descriptionLabel.text = offer.description
+    }
+    
+    func _setFavoriteDisplay(isFavorite: Bool) {
+        if isFavorite {
+            favoriteButton.setImage(UIImage(named: "solidHeart"), for: .normal)
+        } else {
+            favoriteButton.setImage(UIImage(named: "heart"), for: .normal)
+        }
     }
 }
