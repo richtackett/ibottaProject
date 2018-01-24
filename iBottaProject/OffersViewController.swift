@@ -58,7 +58,7 @@ extension OffersViewController: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath)
         
         if let offerCell = cell as? OfferCollectionViewCell {
-            offerCell.populate(offers[indexPath.row])
+            offerCell.populate(offer: offers[indexPath.row])
         }
         
         return cell
@@ -72,8 +72,16 @@ extension OffersViewController: UICollectionViewDataSource {
 // MARK: - UICollectionViewDelegate
 extension OffersViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let offerViewController = OfferViewController(offer: offers[indexPath.row])
+        let offerViewController = OfferViewController(offer: offers[indexPath.row], indexPath: indexPath)
+        offerViewController.delegate = self
         navigationController?.pushViewController(offerViewController, animated: true)
+    }
+}
+
+// MARK: - OfferCellDelegate
+extension OffersViewController: OfferCellDelegate {
+    func updateCell(at indexPath: IndexPath) {
+        collectionView.reloadItems(at: [indexPath])
     }
 }
 

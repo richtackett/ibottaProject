@@ -11,6 +11,7 @@ import Kingfisher
 
 final class OfferViewController: UIViewController {
     private var offer: Offer
+    private let indexPath: IndexPath
     private let backgroundView = UIView(frame: .zero)
     private let imageView = UIImageView(frame: .zero)
     private let favoriteButton = UIButton(frame: .zero)
@@ -19,9 +20,11 @@ final class OfferViewController: UIViewController {
     private let descriptionLabel = UILabel(frame: .zero)
     private let style = Style()
     private let favoritesStore = OfferFavoritesStore()
+    weak var delegate: OfferCellDelegate?
     
-    init(offer: Offer) {
+    init(offer: Offer, indexPath: IndexPath) {
         self.offer = offer
+        self.indexPath = indexPath
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -101,6 +104,7 @@ final class OfferViewController: UIViewController {
         offer.isFavorite = !offer.isFavorite
         _setFavoriteDisplay(isFavorite: offer.isFavorite)
         favoritesStore.toggleSavingAsFavorite(offerID: offer.id)
+        delegate?.updateCell(at: indexPath)
     }
 }
 

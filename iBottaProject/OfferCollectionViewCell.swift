@@ -9,6 +9,10 @@
 import UIKit
 import Kingfisher
 
+protocol OfferCellDelegate: class {
+    func updateCell(at indexPath: IndexPath)
+}
+
 final class OfferCollectionViewCell: UICollectionViewCell {
     private let backgroundCellView = UIView(frame: .zero)
     private let imageView = UIImageView(frame: .zero)
@@ -41,7 +45,7 @@ final class OfferCollectionViewCell: UICollectionViewCell {
         nameLabel.text = nil
     }
     
-    func populate(_ offer: Offer) {
+    func populate(offer: Offer) {
         self.offer = offer
         self.offer?.isFavorite = favoritesStore.isFavorite(offerID: offer.id)
         imageView.kf.setImage(with: offer.url)
