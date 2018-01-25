@@ -105,9 +105,7 @@ private extension OffersViewController {
                 case .success(let offers):
                     self?._handleSuccess(offers: offers)
                 case .error:
-                    ()
-                    
-                    //TODO: SHOW ALERT
+                    self?._handleError()
                 }
             }
         }
@@ -116,5 +114,11 @@ private extension OffersViewController {
     func _handleSuccess(offers: [Offer]) {
         self.offers = offers
         collectionView.reloadData()
+    }
+    
+    func _handleError() {
+        let alert = UIAlertController(title: "Error", message: "Unable to load Offers", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
+        present(alert, animated: true)
     }
 }
