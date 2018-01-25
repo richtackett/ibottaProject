@@ -27,11 +27,6 @@ final class OffersViewController: UIViewController {
         _setupCollectionView()
         _loadOffers()
     }
-    
-    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        super.viewWillTransition(to: size, with: coordinator)
-        collectionView.reloadData()
-    }
 }
 
 // MARK: - UICollectionViewDataSource

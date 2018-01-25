@@ -20,7 +20,6 @@ final class OfferCollectionViewCell: UICollectionViewCell {
     private let amountLabel = UILabel(frame: .zero)
     private let nameLabel = UILabel(frame: .zero)
     private let style = Style()
-    private var contentViewWidthConstraint: NSLayoutConstraint!
     private let favoritesStore = OfferFavoritesStore()
     private var offer: Offer?
     
@@ -51,7 +50,6 @@ final class OfferCollectionViewCell: UICollectionViewCell {
         imageView.kf.setImage(with: offer.url)
         amountLabel.text = offer.currentValue
         nameLabel.text = offer.name
-        contentViewWidthConstraint.constant = contentViewWidth
         _setFavoriteDisplay(isFavorite: self.offer?.isFavorite ?? false)
     }
     
@@ -78,8 +76,7 @@ private extension OfferCollectionViewCell {
     func _setupContentView() {
         contentView.backgroundColor = UIColor.white
         contentView.translatesAutoresizingMaskIntoConstraints = false
-        contentViewWidthConstraint = contentView.widthAnchor.constraint(equalToConstant: contentViewWidth)
-        contentViewWidthConstraint.isActive = true
+        contentView.widthAnchor.constraint(equalToConstant: contentViewWidth).isActive = true
     }
     
     func _addBackgroundCellView() {
