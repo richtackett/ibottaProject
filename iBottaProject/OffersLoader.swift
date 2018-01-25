@@ -1,5 +1,5 @@
 //
-//  FileLoader.swift
+//  OffersLoader.swift
 //  iBottaProject
 //
 //  Created by RICHARD TACKETT on 1/24/18.
@@ -8,11 +8,11 @@
 
 import Foundation
 
-protocol FileLoaderProtocol {
+protocol OffersLoaderProtocol {
     func load(completion: @escaping (Result<Data>) -> Void)
 }
 
-final class FileLoader: FileLoaderProtocol {
+final class OffersLoader: OffersLoaderProtocol {
     func load(completion: @escaping (Result<Data>) -> Void) {
         guard let filePath = Bundle.main.path(forResource: "Offers", ofType: "json") else {
             completion(.error(NSError()))

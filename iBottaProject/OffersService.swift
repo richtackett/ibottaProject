@@ -1,5 +1,5 @@
 //
-//  OffersLoader.swift
+//  OffersService.swift
 //  iBottaProject
 //
 //  Created by RICHARD TACKETT on 1/23/18.
@@ -14,19 +14,19 @@ enum Result<T> {
 }
 
 final class OffersService {
-    private let fileLoader: FileLoaderProtocol
+    private let offersLoader: OffersLoaderProtocol
     private let decoder = JSONDecoder()
     
-    init(fileLoader: FileLoaderProtocol) {
-        self.fileLoader = fileLoader
+    init(offersLoader: OffersLoaderProtocol) {
+        self.offersLoader = offersLoader
     }
     
     convenience init() {
-        self.init(fileLoader: FileLoader())
+        self.init(offersLoader: OffersLoader())
     }
     
     func load(completion: @escaping (Result<[Offer]>) -> Void) {
-        fileLoader.load {[unowned self] (result) in
+        offersLoader.load {[unowned self] (result) in
             switch result {
             case .success(let data):
                 self._decodeData(data: data, completion: completion)
