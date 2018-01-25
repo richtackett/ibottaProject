@@ -25,7 +25,7 @@ final class OfferCollectionViewCell: UICollectionViewCell {
     
     private var contentViewWidth: CGFloat {
         let screenWidth = UIScreen.main.bounds.size.width
-        return (screenWidth / 2) - (style.inset + (style.spacing / 2))
+        return (screenWidth / 2) - (style.horizontalInset + (style.middlePadding / 2))
     }
     
     override init(frame: CGRect) {
@@ -131,7 +131,7 @@ private extension OfferCollectionViewCell {
         nameLabel.topAnchor.constraint(equalTo: amountLabel.bottomAnchor, constant: 3.0).isActive = true
         nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 0.0).isActive = true
         contentView.trailingAnchor.constraint(equalTo: nameLabel.trailingAnchor, constant: 0.0).isActive = true
-        contentView.bottomAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 24.0).isActive = true
+        contentView.bottomAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 0.0).isActive = true
     }
     
     func _setFavoriteDisplay(isFavorite: Bool) {

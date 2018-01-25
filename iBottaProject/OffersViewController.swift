@@ -86,9 +86,9 @@ private extension OffersViewController {
         collectionView.register(OfferCollectionViewCell.self, forCellWithReuseIdentifier: cellIdentifier)
         collectionView.backgroundColor = UIColor.white
         if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-            flowLayout.sectionInset = UIEdgeInsets(top: style.top, left: style.inset, bottom: 0.0, right: style.inset)
-            flowLayout.minimumInteritemSpacing = style.spacing
-            flowLayout.minimumLineSpacing = 0.0
+            flowLayout.sectionInset = UIEdgeInsets(top: style.verticalInset, left: style.horizontalInset, bottom: style.verticalInset, right: style.horizontalInset)
+            flowLayout.minimumInteritemSpacing = style.middlePadding
+            flowLayout.minimumLineSpacing = style.verticalInset
             flowLayout.estimatedItemSize = CGSize(width: 1.0, height: 1.0)
         }
     }
