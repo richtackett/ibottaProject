@@ -16,17 +16,8 @@ final class OffersViewController: UIViewController {
     private let style = Style()
     
     override func loadView() {
-        view = UIView(frame: .zero)
-        viewRespectsSystemMinimumLayoutMargins = false
-        view.layoutMargins = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 0.0, right: 0.0)
-        
-        view.addSubview(collectionView)
-        collectionView.translatesAutoresizingMaskIntoConstraints = false
-        let safeArea = view.safeAreaLayoutGuide
-        collectionView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor).isActive = true
-        safeArea.trailingAnchor.constraint(equalTo: collectionView.trailingAnchor).isActive = true
-        collectionView.topAnchor.constraint(equalTo: safeArea.topAnchor).isActive = true
-        safeArea.bottomAnchor.constraint(equalTo: collectionView.bottomAnchor).isActive = true
+        _addView()
+        _addCollectionView()
     }
 
     override func viewDidLoad() {
@@ -87,6 +78,22 @@ extension OffersViewController: OfferCellDelegate {
 
 // MARK: - Private Helper Methods
 private extension OffersViewController {
+    func _addView() {
+        view = UIView(frame: .zero)
+        viewRespectsSystemMinimumLayoutMargins = false
+        view.layoutMargins = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 0.0, right: 0.0)
+    }
+    
+    func _addCollectionView() {
+        view.addSubview(collectionView)
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        let safeArea = view.safeAreaLayoutGuide
+        collectionView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor).isActive = true
+        safeArea.trailingAnchor.constraint(equalTo: collectionView.trailingAnchor).isActive = true
+        collectionView.topAnchor.constraint(equalTo: safeArea.topAnchor).isActive = true
+        safeArea.bottomAnchor.constraint(equalTo: collectionView.bottomAnchor).isActive = true
+    }
+    
     func _setupCollectionView() {
         collectionView.dataSource = self
         collectionView.delegate = self
