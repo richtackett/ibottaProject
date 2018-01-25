@@ -18,6 +18,7 @@ final class OfferViewController: UIViewController {
     private let amountLabel = UILabel(frame: .zero)
     private let nameLabel = UILabel(frame: .zero)
     private let descriptionLabel = UILabel(frame: .zero)
+    private let termsLabel = UILabel(frame: .zero)
     private let style = Style()
     private let favoritesStore = OfferFavoritesStore()
     weak var delegate: OfferCellDelegate?
@@ -41,6 +42,7 @@ final class OfferViewController: UIViewController {
         _addAmountLabel()
         _addNameLabel()
         _addDescriptionLabel()
+        _addTermsLabel()
     }
 
     override func viewDidLoad() {
@@ -126,6 +128,17 @@ private extension OfferViewController {
         view.safeAreaLayoutGuide.trailingAnchor.constraint(equalTo: descriptionLabel.trailingAnchor, constant: 12.0).isActive = true
     }
     
+    func _addTermsLabel() {
+        termsLabel.numberOfLines = 0
+        termsLabel.font = style.descriptionFont
+        termsLabel.textColor = style.textColor
+        view.addSubview(termsLabel)
+        termsLabel.translatesAutoresizingMaskIntoConstraints = false
+        termsLabel.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 3.0).isActive = true
+        termsLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 12.0).isActive = true
+        view.safeAreaLayoutGuide.trailingAnchor.constraint(equalTo: termsLabel.trailingAnchor, constant: 12.0).isActive = true
+    }
+    
     func _populate() {
         offer.isFavorite = favoritesStore.isFavorite(offerID: offer.id)
         _setFavoriteDisplay(isFavorite: offer.isFavorite)
@@ -133,6 +146,7 @@ private extension OfferViewController {
         amountLabel.text = offer.currentValue
         nameLabel.text = offer.name
         descriptionLabel.text = offer.description
+        termsLabel.text = offer.terms
     }
     
     func _setFavoriteDisplay(isFavorite: Bool) {
