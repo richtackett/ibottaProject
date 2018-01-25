@@ -26,7 +26,7 @@ final class OfferCollectionViewCell: UICollectionViewCell {
     
     private var contentViewWidth: CGFloat {
         let screenWidth = UIScreen.main.bounds.size.width
-        return (screenWidth / 2) - (style.inset + style.spacing / 2)
+        return (screenWidth / 2) - (style.inset + (style.spacing / 2))
     }
     
     override init(frame: CGRect) {
@@ -67,11 +67,22 @@ final class OfferCollectionViewCell: UICollectionViewCell {
 
 private extension OfferCollectionViewCell {
     func _setupCell() {
+        _setupContentView()
+        _addBackgroundCellView()
+        _addImageView()
+        _addFavoriteButton()
+        _addAmountLabel()
+        _addNameLabel()
+    }
+    
+    func _setupContentView() {
         contentView.backgroundColor = UIColor.white
         contentView.translatesAutoresizingMaskIntoConstraints = false
         contentViewWidthConstraint = contentView.widthAnchor.constraint(equalToConstant: contentViewWidth)
         contentViewWidthConstraint.isActive = true
-        
+    }
+    
+    func _addBackgroundCellView() {
         backgroundCellView.layer.cornerRadius = style.cornerRadius
         backgroundCellView.backgroundColor = style.backgroundColor
         contentView.addSubview(backgroundCellView)
@@ -80,7 +91,9 @@ private extension OfferCollectionViewCell {
         backgroundCellView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 0.0).isActive = true
         contentView.trailingAnchor.constraint(equalTo: backgroundCellView.trailingAnchor, constant: 0.0).isActive = true
         backgroundCellView.heightAnchor.constraint(equalTo: backgroundCellView.widthAnchor, multiplier: 1.0/1.5).isActive = true
-        
+    }
+    
+    func _addImageView() {
         imageView.contentMode = .scaleAspectFit
         backgroundCellView.addSubview(imageView)
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -88,7 +101,9 @@ private extension OfferCollectionViewCell {
         imageView.leadingAnchor.constraint(equalTo: backgroundCellView.leadingAnchor, constant: 6.0).isActive = true
         backgroundCellView.trailingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 6.0).isActive = true
         backgroundCellView.bottomAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 6.0).isActive = true
-        
+    }
+    
+    func _addFavoriteButton() {
         favoriteButton.setImage(UIImage(named: "heart"), for: .normal)
         favoriteButton.backgroundColor = UIColor.white.withAlphaComponent(0.60)
         favoriteButton.layer.cornerRadius = style.cornerRadius
@@ -99,7 +114,9 @@ private extension OfferCollectionViewCell {
         contentView.trailingAnchor.constraint(equalTo: favoriteButton.trailingAnchor, constant: 6.0).isActive = true
         favoriteButton.heightAnchor.constraint(equalToConstant: 40.0).isActive = true
         favoriteButton.widthAnchor.constraint(equalToConstant: 40.0).isActive = true
-        
+    }
+    
+    func _addAmountLabel() {
         amountLabel.font = style.amountFont
         amountLabel.textColor = style.textColor
         contentView.addSubview(amountLabel)
@@ -107,7 +124,9 @@ private extension OfferCollectionViewCell {
         amountLabel.topAnchor.constraint(equalTo: backgroundCellView.bottomAnchor, constant: 8.0).isActive = true
         amountLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 0.0).isActive = true
         contentView.trailingAnchor.constraint(equalTo: amountLabel.trailingAnchor, constant: 0.0).isActive = true
-        
+    }
+    
+    func _addNameLabel() {
         nameLabel.font = style.nameFont
         nameLabel.textColor = style.textColor
         contentView.addSubview(nameLabel)
