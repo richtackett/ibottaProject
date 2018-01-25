@@ -20,7 +20,7 @@
 		508B05AD20178D0C0023EA6B /* OffersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508B05AC20178D0C0023EA6B /* OffersViewController.swift */; };
 		508B05AF20178D1D0023EA6B /* OfferViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508B05AE20178D1D0023EA6B /* OfferViewController.swift */; };
 		508B05B120178E1C0023EA6B /* Offers.json in Resources */ = {isa = PBXBuildFile; fileRef = 508B05B020178E1C0023EA6B /* Offers.json */; };
-		508B05B32017E3080023EA6B /* OffersLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508B05B22017E3080023EA6B /* OffersLoader.swift */; };
+		508B05B32017E3080023EA6B /* OffersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508B05B22017E3080023EA6B /* OffersService.swift */; };
 		508B05B52017ED920023EA6B /* Offer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508B05B42017ED920023EA6B /* Offer.swift */; };
 		508B05B72017EE850023EA6B /* OfferCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508B05B62017EE850023EA6B /* OfferCollectionViewCell.swift */; };
 		508B05DF2018DEFF0023EA6B /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508B05DE2018DEFF0023EA6B /* Style.swift */; };
@@ -59,7 +59,7 @@
 		508B05AC20178D0C0023EA6B /* OffersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffersViewController.swift; sourceTree = "<group>"; };
 		508B05AE20178D1D0023EA6B /* OfferViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferViewController.swift; sourceTree = "<group>"; };
 		508B05B020178E1C0023EA6B /* Offers.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Offers.json; sourceTree = "<group>"; };
-		508B05B22017E3080023EA6B /* OffersLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffersLoader.swift; sourceTree = "<group>"; };
+		508B05B22017E3080023EA6B /* OffersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffersService.swift; sourceTree = "<group>"; };
 		508B05B42017ED920023EA6B /* Offer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Offer.swift; sourceTree = "<group>"; };
 		508B05B62017EE850023EA6B /* OfferCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferCollectionViewCell.swift; sourceTree = "<group>"; };
 		508B05DE2018DEFF0023EA6B /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
@@ -123,7 +123,7 @@
 				50695EB9201933D6001FD451 /* OfferFavorites.xcdatamodeld */,
 				50695EC220193684001FD451 /* OfferFavoritesStore.swift */,
 				508B05B020178E1C0023EA6B /* Offers.json */,
-				508B05B22017E3080023EA6B /* OffersLoader.swift */,
+				508B05B22017E3080023EA6B /* OffersService.swift */,
 				508B05AC20178D0C0023EA6B /* OffersViewController.swift */,
 				508B05AE20178D1D0023EA6B /* OfferViewController.swift */,
 				508B05DE2018DEFF0023EA6B /* Style.swift */,
@@ -376,7 +376,7 @@
 				50695EBF20193473001FD451 /* Favorite+CoreDataProperties.swift in Sources */,
 				5025B141201788F9001A41BF /* AppDelegate.swift in Sources */,
 				508B05B72017EE850023EA6B /* OfferCollectionViewCell.swift in Sources */,
-				508B05B32017E3080023EA6B /* OffersLoader.swift in Sources */,
+				508B05B32017E3080023EA6B /* OffersService.swift in Sources */,
 				50695EBE20193473001FD451 /* Favorite+CoreDataClass.swift in Sources */,
 				50695EC1201934FB001FD451 /* CoreDataStack.swift in Sources */,
 				508B05AF20178D1D0023EA6B /* OfferViewController.swift in Sources */,
