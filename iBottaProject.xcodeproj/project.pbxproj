@@ -116,6 +116,7 @@
 				50695EC0201934FB001FD451 /* CoreDataStack.swift */,
 				50695EBC20193473001FD451 /* Favorite+CoreDataClass.swift */,
 				50695EBD20193473001FD451 /* Favorite+CoreDataProperties.swift */,
+				50695EC420197422001FD451 /* FileLoader.swift */,
 				5025B14C201788F9001A41BF /* Info.plist */,
 				5025B149201788F9001A41BF /* LaunchScreen.storyboard */,
 				508B05B42017ED920023EA6B /* Offer.swift */,
@@ -127,7 +128,6 @@
 				508B05AC20178D0C0023EA6B /* OffersViewController.swift */,
 				508B05AE20178D1D0023EA6B /* OfferViewController.swift */,
 				508B05DE2018DEFF0023EA6B /* Style.swift */,
-				50695EC420197422001FD451 /* FileLoader.swift */,
 			);
 			path = iBottaProject;
 			sourceTree = "<group>";

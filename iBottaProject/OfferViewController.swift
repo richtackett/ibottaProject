@@ -95,7 +95,7 @@ private extension OfferViewController {
     
     func _addAmountLabel() {
         amountLabel.numberOfLines = 0
-        amountLabel.font = style.amountFont
+        amountLabel.font = style.amountFont?.withSize(16.0)
         amountLabel.textColor = style.textColor
         view.addSubview(amountLabel)
         amountLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -106,7 +106,7 @@ private extension OfferViewController {
     
     func _addNameLabel() {
         nameLabel.numberOfLines = 0
-        nameLabel.font = style.nameFont
+        nameLabel.font = style.nameFont?.withSize(14.0)
         nameLabel.textColor = style.textColor
         view.addSubview(nameLabel)
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -117,7 +117,7 @@ private extension OfferViewController {
     
     func _addDescriptionLabel() {
         descriptionLabel.numberOfLines = 0
-        descriptionLabel.font = style.descriptionFont
+        descriptionLabel.font = style.descriptionFont?.withSize(12.0)
         descriptionLabel.textColor = style.textColor
         view.addSubview(descriptionLabel)
         descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
