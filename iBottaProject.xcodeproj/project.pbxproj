@@ -16,6 +16,7 @@
 		50695EBF20193473001FD451 /* Favorite+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50695EBD20193473001FD451 /* Favorite+CoreDataProperties.swift */; };
 		50695EC1201934FB001FD451 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50695EC0201934FB001FD451 /* CoreDataStack.swift */; };
 		50695EC320193684001FD451 /* OfferFavoritesStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50695EC220193684001FD451 /* OfferFavoritesStore.swift */; };
+		50695EC520197422001FD451 /* FileLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50695EC420197422001FD451 /* FileLoader.swift */; };
 		508B05AD20178D0C0023EA6B /* OffersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508B05AC20178D0C0023EA6B /* OffersViewController.swift */; };
 		508B05AF20178D1D0023EA6B /* OfferViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508B05AE20178D1D0023EA6B /* OfferViewController.swift */; };
 		508B05B120178E1C0023EA6B /* Offers.json in Resources */ = {isa = PBXBuildFile; fileRef = 508B05B020178E1C0023EA6B /* Offers.json */; };
@@ -54,6 +55,7 @@
 		50695EBD20193473001FD451 /* Favorite+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Favorite+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		50695EC0201934FB001FD451 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		50695EC220193684001FD451 /* OfferFavoritesStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferFavoritesStore.swift; sourceTree = "<group>"; };
+		50695EC420197422001FD451 /* FileLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileLoader.swift; sourceTree = "<group>"; };
 		508B05AC20178D0C0023EA6B /* OffersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffersViewController.swift; sourceTree = "<group>"; };
 		508B05AE20178D1D0023EA6B /* OfferViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferViewController.swift; sourceTree = "<group>"; };
 		508B05B020178E1C0023EA6B /* Offers.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Offers.json; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 				508B05AC20178D0C0023EA6B /* OffersViewController.swift */,
 				508B05AE20178D1D0023EA6B /* OfferViewController.swift */,
 				508B05DE2018DEFF0023EA6B /* Style.swift */,
+				50695EC420197422001FD451 /* FileLoader.swift */,
 			);
 			path = iBottaProject;
 			sourceTree = "<group>";
@@ -378,6 +381,7 @@
 				50695EC1201934FB001FD451 /* CoreDataStack.swift in Sources */,
 				508B05AF20178D1D0023EA6B /* OfferViewController.swift in Sources */,
 				508B05AD20178D0C0023EA6B /* OffersViewController.swift in Sources */,
+				50695EC520197422001FD451 /* FileLoader.swift in Sources */,
 				508B05DF2018DEFF0023EA6B /* Style.swift in Sources */,
 				50695EC320193684001FD451 /* OfferFavoritesStore.swift in Sources */,
 				508B05B52017ED920023EA6B /* Offer.swift in Sources */,

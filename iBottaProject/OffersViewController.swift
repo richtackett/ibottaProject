@@ -12,7 +12,8 @@ final class OffersViewController: UIViewController {
     private let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
     private let cellIdentifier = "OfferCell"
     private var offers = [Offer]()
-    private let offersLoader = OffersLoader()
+    private let offersService = OffersService()
+    
     private let style = Style()
     
     override func loadView() {
@@ -24,17 +25,7 @@ final class OffersViewController: UIViewController {
         super.viewDidLoad()
         navigationItem.title = "Offers"
         _setupCollectionView()
-        
-        //TODO: LOAD IN BACKGROUND THREAD AND MAKE ASYNC
-        let result = offersLoader.load()
-        switch result {
-        case .success(let offers):
-            self.offers = offers
-            collectionView.reloadData()
-        case .error:
-            print("error")
-        }
-
+        _loadOffers()
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -105,5 +96,25 @@ private extension OffersViewController {
             flowLayout.minimumLineSpacing = 0.0
             flowLayout.estimatedItemSize = CGSize(width: 1.0, height: 1.0)
         }
+    }
+    
+    func _loadOffers() {
+        offersService.load {[weak self] (result) in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let offers):
+                    self?._handleSuccess(offers: offers)
+                case .error:
+                    ()
+                    
+                    //TODO: SHOW ALERT
+                }
+            }
+        }
+    }
+    
+    func _handleSuccess(offers: [Offer]) {
+        self.offers = offers
+        collectionView.reloadData()
     }
 }

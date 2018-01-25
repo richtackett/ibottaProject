@@ -8,29 +8,40 @@
 
 import Foundation
 
-enum Result {
-    case success([Offer])
+enum Result<T> {
+    case success(T)
     case error(Error)
 }
 
-protocol OffersLoaderProtocol {
-    func load() -> Result
-}
-
-final class OffersLoader: OffersLoaderProtocol {
-
-    func load() -> Result {
-        guard let filePath = Bundle.main.path(forResource: "Offers", ofType: "json")
-            else { return .error(NSError()) }
-        
-        let url = URL(fileURLWithPath: filePath)
+final class OffersService {
+    private let fileLoader: FileLoaderProtocol
+    private let decoder = JSONDecoder()
+    
+    init(fileLoader: FileLoaderProtocol) {
+        self.fileLoader = fileLoader
+    }
+    
+    convenience init() {
+        self.init(fileLoader: FileLoader())
+    }
+    
+    func load(completion: @escaping (Result<[Offer]>) -> Void) {
+        fileLoader.load {[unowned self] (result) in
+            switch result {
+            case .success(let data):
+                self._decodeData(data: data, completion: completion)
+            case .error(let error):
+                completion(.error(error))
+            }
+        }
+    }
+    
+    func _decodeData(data: Data, completion: @escaping (Result<[Offer]>) -> Void) {
         do {
-            let data = try Data(contentsOf: url)
-            let decoder = JSONDecoder()
             let offers = try decoder.decode([Offer].self, from: data)
-            return .success(offers)
+            completion(.success(offers))
         } catch let error {
-            return .error(error)
+            completion(.error(error))
         }
     }
 }

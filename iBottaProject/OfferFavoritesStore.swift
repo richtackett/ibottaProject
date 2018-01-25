@@ -15,7 +15,6 @@ final class OfferFavoritesStore {
     
     func isFavorite(offerID: String) -> Bool {
         favoritesFetch.predicate = NSPredicate(format: "%K == %@", #keyPath(Favorite.offerID), offerID)
-        
         do {
             let results = try managedContext.fetch(favoritesFetch)
             if results.count > 0 {
@@ -32,7 +31,6 @@ final class OfferFavoritesStore {
     
     func toggleSavingAsFavorite(offerID: String) {
         favoritesFetch.predicate = NSPredicate(format: "%K == %@", #keyPath(Favorite.offerID), offerID)
-        
         do {
             let results = try managedContext.fetch(favoritesFetch)
             if results.count > 0 {
