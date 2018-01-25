@@ -44,7 +44,57 @@ class OffersServiceTests: XCTestCase {
         waitForExpectations(timeout: 1, handler: nil)
     }
     
+    func test_load_failure_decodingError() {
+        //given
+        class MockOffersLoader: OffersLoaderProtocol {
+            func load(completion: @escaping (Result<Data>) -> Void) {
+                let notOffer: [String: Any] = ["foo":"bar"]
+                let JSON: [Any] = [notOffer]
+                let data = try! JSONSerialization.data(withJSONObject: JSON)
+                completion(.success(data))
+            }
+        }
+        
+        let offersService = OffersService(offersLoader: MockOffersLoader())
+        let loadExpectation = expectation(description: "")
+        
+        //when
+        offersService.load { (result) in
+            switch result {
+            case .success:
+                XCTFail()
+            case .error(let error):
+                XCTAssert(error is DecodingError)
+                loadExpectation.fulfill()
+            }
+        }
+        
+        //then
+        waitForExpectations(timeout: 1, handler: nil)
+    }
     
-    
-    
+    func test_load_failure_fileError() {
+        //given
+        class MockOffersLoader: OffersLoaderProtocol {
+            func load(completion: @escaping (Result<Data>) -> Void) {
+                completion(.error(NSError(domain: "Offers", code: 101, userInfo: nil)))
+            }
+        }
+        
+        let offersService = OffersService(offersLoader: MockOffersLoader())
+        let loadExpectation = expectation(description: "")
+        
+        //when
+        offersService.load { (result) in
+            switch result {
+            case .success:
+                XCTFail()
+            case .error:
+                loadExpectation.fulfill()
+            }
+        }
+        
+        //then
+        waitForExpectations(timeout: 1, handler: nil)
+    }
 }
