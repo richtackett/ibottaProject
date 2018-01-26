@@ -15,7 +15,7 @@ protocol OffersLoaderProtocol {
 final class OffersLoader: OffersLoaderProtocol {
     func load(completion: @escaping (Result<Data>) -> Void) {
         guard let filePath = Bundle.main.path(forResource: "Offers", ofType: "json") else {
-            completion(.error(NSError()))
+            completion(.error(NSError(domain: "OffersLoader", code: 200, userInfo: nil)))
             return
         }
         

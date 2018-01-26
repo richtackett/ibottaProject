@@ -22,7 +22,6 @@ final class OfferFavoritesStore {
             } else {
                 return false
             }
-            
         } catch let error as NSError {
             print("Fetch error: \(error) description: \(error.userInfo)")
             return false
@@ -33,18 +32,18 @@ final class OfferFavoritesStore {
         favoritesFetch.predicate = NSPredicate(format: "%K == %@", #keyPath(Favorite.offerID), offerID)
         do {
             let results = try managedContext.fetch(favoritesFetch)
+            //Remove favorite
             if results.count > 0 {
                 if let favorite = results.first {
                     managedContext.delete(favorite)
                 }
-                
             } else {
+                //Add favorite
                 let favorite = Favorite(context: managedContext)
                 favorite.offerID = offerID
             }
             
             try managedContext.save()
-            
         } catch let error as NSError {
             print("Fetch error: \(error) description: \(error.userInfo)")
         }

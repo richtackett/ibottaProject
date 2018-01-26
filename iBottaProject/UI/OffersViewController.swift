@@ -13,7 +13,6 @@ final class OffersViewController: UIViewController {
     private let cellIdentifier = "OfferCell"
     private var offers = [Offer]()
     private let offersService = OffersService()
-    
     private let style = Style()
     
     override func loadView() {
