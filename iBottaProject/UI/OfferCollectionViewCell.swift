@@ -77,6 +77,8 @@ private extension OfferCollectionViewCell {
         contentView.backgroundColor = UIColor.white
         contentView.translatesAutoresizingMaskIntoConstraints = false
         contentView.widthAnchor.constraint(equalToConstant: contentViewWidth).isActive = true
+        contentView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+        contentView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
     }
     
     func _addBackgroundCellView() {
@@ -84,9 +86,9 @@ private extension OfferCollectionViewCell {
         backgroundCellView.backgroundColor = style.backgroundColor
         contentView.addSubview(backgroundCellView)
         backgroundCellView.translatesAutoresizingMaskIntoConstraints = false
-        backgroundCellView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 0.0).isActive = true
-        backgroundCellView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 0.0).isActive = true
-        contentView.trailingAnchor.constraint(equalTo: backgroundCellView.trailingAnchor, constant: 0.0).isActive = true
+        backgroundCellView.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
+        backgroundCellView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
+        contentView.trailingAnchor.constraint(equalTo: backgroundCellView.trailingAnchor).isActive = true
         backgroundCellView.heightAnchor.constraint(equalTo: backgroundCellView.widthAnchor, multiplier: 1.0/1.5).isActive = true
     }
     
@@ -107,8 +109,8 @@ private extension OfferCollectionViewCell {
         favoriteButton.translatesAutoresizingMaskIntoConstraints = false
         favoriteButton.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
         contentView.addSubview(favoriteButton)
-        favoriteButton.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 0.0).isActive = true
-        contentView.trailingAnchor.constraint(equalTo: favoriteButton.trailingAnchor, constant: 0.0).isActive = true
+        favoriteButton.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
+        contentView.trailingAnchor.constraint(equalTo: favoriteButton.trailingAnchor).isActive = true
         favoriteButton.heightAnchor.constraint(equalToConstant: 40.0).isActive = true
         favoriteButton.widthAnchor.constraint(equalToConstant: 40.0).isActive = true
     }
@@ -119,8 +121,8 @@ private extension OfferCollectionViewCell {
         contentView.addSubview(amountLabel)
         amountLabel.translatesAutoresizingMaskIntoConstraints = false
         amountLabel.topAnchor.constraint(equalTo: backgroundCellView.bottomAnchor, constant: 8.0).isActive = true
-        amountLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 0.0).isActive = true
-        contentView.trailingAnchor.constraint(equalTo: amountLabel.trailingAnchor, constant: 0.0).isActive = true
+        amountLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
+        contentView.trailingAnchor.constraint(equalTo: amountLabel.trailingAnchor).isActive = true
     }
     
     func _addNameLabel() {
@@ -129,9 +131,9 @@ private extension OfferCollectionViewCell {
         contentView.addSubview(nameLabel)
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         nameLabel.topAnchor.constraint(equalTo: amountLabel.bottomAnchor, constant: 3.0).isActive = true
-        nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 0.0).isActive = true
-        contentView.trailingAnchor.constraint(equalTo: nameLabel.trailingAnchor, constant: 0.0).isActive = true
-        contentView.bottomAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 0.0).isActive = true
+        nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
+        contentView.trailingAnchor.constraint(equalTo: nameLabel.trailingAnchor).isActive = true
+        contentView.bottomAnchor.constraint(equalTo: nameLabel.bottomAnchor).isActive = true
     }
     
     func _setFavoriteDisplay(isFavorite: Bool) {
