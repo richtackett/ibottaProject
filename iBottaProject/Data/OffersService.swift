@@ -36,7 +36,7 @@ final class OffersService {
         }
     }
     
-    func _decodeData(data: Data, completion: @escaping (Result<[Offer]>) -> Void) {
+    private func _decodeData(data: Data, completion: @escaping (Result<[Offer]>) -> Void) {
         do {
             let offers = try decoder.decode([Offer].self, from: data)
             completion(.success(offers))
