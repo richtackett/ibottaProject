@@ -112,22 +112,11 @@
 			isa = PBXGroup;
 			children = (
 				5025B140201788F9001A41BF /* AppDelegate.swift */,
+				50695EC8201ACDBA001FD451 /* UI */,
+				50695EC9201ACE4B001FD451 /* Data */,
 				5025B147201788F9001A41BF /* Assets.xcassets */,
-				50695EC0201934FB001FD451 /* CoreDataStack.swift */,
-				50695EBC20193473001FD451 /* Favorite+CoreDataClass.swift */,
-				50695EBD20193473001FD451 /* Favorite+CoreDataProperties.swift */,
 				5025B14C201788F9001A41BF /* Info.plist */,
 				5025B149201788F9001A41BF /* LaunchScreen.storyboard */,
-				508B05B42017ED920023EA6B /* Offer.swift */,
-				508B05B62017EE850023EA6B /* OfferCollectionViewCell.swift */,
-				50695EB9201933D6001FD451 /* OfferFavorites.xcdatamodeld */,
-				50695EC220193684001FD451 /* OfferFavoritesStore.swift */,
-				508B05B020178E1C0023EA6B /* Offers.json */,
-				50695EC420197422001FD451 /* OffersLoader.swift */,
-				508B05B22017E3080023EA6B /* OffersService.swift */,
-				508B05AC20178D0C0023EA6B /* OffersViewController.swift */,
-				508B05AE20178D1D0023EA6B /* OfferViewController.swift */,
-				508B05DE2018DEFF0023EA6B /* Style.swift */,
 			);
 			path = iBottaProject;
 			sourceTree = "<group>";
@@ -139,6 +128,33 @@
 				50695EC6201A2B1F001FD451 /* OffersServiceTests.swift */,
 			);
 			path = iBottaProjectTests;
+			sourceTree = "<group>";
+		};
+		50695EC8201ACDBA001FD451 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				508B05B62017EE850023EA6B /* OfferCollectionViewCell.swift */,
+				508B05AC20178D0C0023EA6B /* OffersViewController.swift */,
+				508B05AE20178D1D0023EA6B /* OfferViewController.swift */,
+				508B05DE2018DEFF0023EA6B /* Style.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		50695EC9201ACE4B001FD451 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				50695EC0201934FB001FD451 /* CoreDataStack.swift */,
+				50695EBC20193473001FD451 /* Favorite+CoreDataClass.swift */,
+				50695EBD20193473001FD451 /* Favorite+CoreDataProperties.swift */,
+				508B05B42017ED920023EA6B /* Offer.swift */,
+				50695EB9201933D6001FD451 /* OfferFavorites.xcdatamodeld */,
+				50695EC220193684001FD451 /* OfferFavoritesStore.swift */,
+				508B05B020178E1C0023EA6B /* Offers.json */,
+				50695EC420197422001FD451 /* OffersLoader.swift */,
+				508B05B22017E3080023EA6B /* OffersService.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 		5FCA2B00D8D12024CDB59FC3 /* Frameworks */ = {

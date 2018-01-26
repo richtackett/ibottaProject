@@ -91,8 +91,8 @@ private extension OfferViewController {
         backgroundView.addSubview(favoriteButton)
         favoriteButton.topAnchor.constraint(equalTo: backgroundView.topAnchor, constant: 0.0).isActive = true
         backgroundView.trailingAnchor.constraint(equalTo: favoriteButton.trailingAnchor, constant: 0.0).isActive = true
-        favoriteButton.heightAnchor.constraint(equalToConstant: 40.0).isActive = true
-        favoriteButton.widthAnchor.constraint(equalToConstant: 40.0).isActive = true
+        favoriteButton.heightAnchor.constraint(equalToConstant: 80.0).isActive = true
+        favoriteButton.widthAnchor.constraint(equalToConstant: 80.0).isActive = true
     }
     
     func _addAmountLabel() {
