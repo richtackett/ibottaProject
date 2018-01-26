@@ -89,7 +89,7 @@ private extension OffersViewController {
             flowLayout.sectionInset = UIEdgeInsets(top: style.verticalInset, left: style.horizontalInset, bottom: style.verticalInset, right: style.horizontalInset)
             flowLayout.minimumInteritemSpacing = style.middlePadding
             flowLayout.minimumLineSpacing = style.verticalInset
-            flowLayout.estimatedItemSize = CGSize(width: 1.0, height: 1.0)
+            flowLayout.estimatedItemSize = UICollectionViewFlowLayoutAutomaticSize
         }
     }
     
