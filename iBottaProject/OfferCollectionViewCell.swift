@@ -107,14 +107,14 @@ private extension OfferCollectionViewCell {
         favoriteButton.translatesAutoresizingMaskIntoConstraints = false
         favoriteButton.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
         contentView.addSubview(favoriteButton)
-        favoriteButton.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 6.0).isActive = true
-        contentView.trailingAnchor.constraint(equalTo: favoriteButton.trailingAnchor, constant: 6.0).isActive = true
+        favoriteButton.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 0.0).isActive = true
+        contentView.trailingAnchor.constraint(equalTo: favoriteButton.trailingAnchor, constant: 0.0).isActive = true
         favoriteButton.heightAnchor.constraint(equalToConstant: 40.0).isActive = true
         favoriteButton.widthAnchor.constraint(equalToConstant: 40.0).isActive = true
     }
     
     func _addAmountLabel() {
-        amountLabel.font = style.amountFont
+        amountLabel.font = style.boldFont
         amountLabel.textColor = style.textColor
         contentView.addSubview(amountLabel)
         amountLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -124,7 +124,7 @@ private extension OfferCollectionViewCell {
     }
     
     func _addNameLabel() {
-        nameLabel.font = style.nameFont
+        nameLabel.font = style.regularFont
         nameLabel.textColor = style.textColor
         contentView.addSubview(nameLabel)
         nameLabel.translatesAutoresizingMaskIntoConstraints = false

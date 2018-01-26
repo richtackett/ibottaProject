@@ -89,15 +89,15 @@ private extension OfferViewController {
         favoriteButton.translatesAutoresizingMaskIntoConstraints = false
         favoriteButton.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
         backgroundView.addSubview(favoriteButton)
-        favoriteButton.topAnchor.constraint(equalTo: backgroundView.topAnchor, constant: 6.0).isActive = true
-        backgroundView.trailingAnchor.constraint(equalTo: favoriteButton.trailingAnchor, constant: 6.0).isActive = true
+        favoriteButton.topAnchor.constraint(equalTo: backgroundView.topAnchor, constant: 0.0).isActive = true
+        backgroundView.trailingAnchor.constraint(equalTo: favoriteButton.trailingAnchor, constant: 0.0).isActive = true
         favoriteButton.heightAnchor.constraint(equalToConstant: 40.0).isActive = true
         favoriteButton.widthAnchor.constraint(equalToConstant: 40.0).isActive = true
     }
     
     func _addAmountLabel() {
         amountLabel.numberOfLines = 0
-        amountLabel.font = style.amountFont?.withSize(16.0)
+        amountLabel.font = style.boldFont?.withSize(16.0)
         amountLabel.textColor = style.textColor
         view.addSubview(amountLabel)
         amountLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -108,7 +108,7 @@ private extension OfferViewController {
     
     func _addNameLabel() {
         nameLabel.numberOfLines = 0
-        nameLabel.font = style.nameFont?.withSize(14.0)
+        nameLabel.font = style.regularFont?.withSize(14.0)
         nameLabel.textColor = style.textColor
         view.addSubview(nameLabel)
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -119,7 +119,7 @@ private extension OfferViewController {
     
     func _addDescriptionLabel() {
         descriptionLabel.numberOfLines = 0
-        descriptionLabel.font = style.descriptionFont?.withSize(12.0)
+        descriptionLabel.font = style.regularFont?.withSize(12.0)
         descriptionLabel.textColor = style.textColor
         view.addSubview(descriptionLabel)
         descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -130,7 +130,7 @@ private extension OfferViewController {
     
     func _addTermsLabel() {
         termsLabel.numberOfLines = 0
-        termsLabel.font = style.descriptionFont
+        termsLabel.font = style.regularFont
         termsLabel.textColor = style.textColor
         view.addSubview(termsLabel)
         termsLabel.translatesAutoresizingMaskIntoConstraints = false
